@@ -1,6 +1,7 @@
 require('dotenv').config();
 const { Client, Collection, GatewayIntentBits } = require('discord.js');
 const functions = require('./modules/functions');
+const { default: mongoose } = require('mongoose');
 
 // Initiate everything
 const client = new Client({ 
@@ -26,6 +27,12 @@ for (i = 0; i < functionKeys.length; i++) {
 
 ['command_handler', 'event_handler'].forEach(handler => {
     require(`./handlers/${handler}`)(client);
+});
+
+mongoose.connect(process.env.DB_STRING).then(() => {
+    client.Log('Connected to the database!');
+}).catch(error => {
+    client.Log('[ERROR]: ' + error);
 });
 
 // Handle the unhandled exceptions
