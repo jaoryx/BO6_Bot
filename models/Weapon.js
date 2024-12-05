@@ -6,10 +6,13 @@ const WeaponScheme = new mongoose.Schema({
         required: true,
         unique: true
     },
+    weaponType: {
+        type: mongoose.SchemaTypes.String,
+        required: true
+    },
     camos: {
         type: mongoose.SchemaTypes.Array,
-        required: true,
-        unique: true
+        required: true
     }
 });
 

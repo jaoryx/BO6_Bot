@@ -5,5 +5,7 @@ module.exports = {
 	once: true,
 	async execute(client) {
 		client.Log(`Ready! Logged in as ${client.user.tag}`);
+
+		
 	},
 };
