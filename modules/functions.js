@@ -7,12 +7,8 @@ function Log(message) {
     console.log(logMsg);
 }
 
-async function AddCamo(name, requirement) {
-    if (!name || !requirement || typeof(name) !== 'string' || typeof(requirement) !== 'string') {
-        return 'Not empty!';
-    } else {
-        await Camo.create({ camoName: name, camoRequirement: requirement });
-    }
+async function AddCamo(name, requirement, camoType, weaponTypes) {
+    await Camo.create({ camoName: name, camoRequirement: requirement, camoType, weaponTypes });
 }
 
 async function AddWeapon(name, camos) {
@@ -27,8 +23,8 @@ async function AddWeaponType(name) {
     if (!name || typeof(name) !== 'string') {
         return 'Not empty!';
     } else {
-        await Camo.create({ camoName: name, camoRequirement: requirement });
+        await WeaponType.create({ weaponType: name });
     }
 }
 
-module.exports = { Log }
+module.exports = { Log, AddWeapon, AddWeaponType, AddCamo }
