@@ -15,6 +15,8 @@ module.exports = async (client) => {
         });
     });
 
+    //======================== MULTIPLAYER ========================//
+
     // MILITARY CAMO'S PRIMARY WEAPONS //////////////////////////////////////////////////////
     await client.AddCamo('Granite', 'Get 5 headshots', 'Multiplayer', primarys);
     await client.AddCamo('Woodland', 'Get 10 headshots', 'Multiplayer', primarys);
@@ -149,6 +151,10 @@ module.exports = async (client) => {
 
     await client.AddCamo('Reboot', 'Get 10 Direct Hit Kills with the HE-1', 'Multiplayer', ['HE-1']);
     await client.AddCamo('Dreamer', 'Destroy 10 scorestreaks or enemy equipment with the HE-1', 'Multiplayer', ['HE-1']);
+
+    // SPECIALS
+    await client.AddCamo('Nebulon', 'Get 30 kills shortly after sprinting with the Sirin 9mm', 'Multiplayer', ['Sirin 9mm']);
+    await client.AddCamo('Enchanted', 'Get 50 kills while moving with the Sirin 9mm', 'Multiplayer', ['Sirin 9mm']);
     /////////////////////////////////////////////////////////////////////////////////////////
 
     // MASTERY CAMO'S PRIMARY WEAPONS ///////////////////////////////////////////////////////
@@ -181,6 +187,9 @@ module.exports = async (client) => {
 
     await client.AddCamo('Torment', 'Get 15 kills shortly after switching weapons with the Baseball Bat', 'Multiplayer', ['Baseball Bat']);
     await client.AddCamo('Slip', 'Get a kill without taking any damage 30 times with the Baseball Bat', 'Multiplayer', ['Baseball Bat']);
+
+    await client.AddCamo('Twilgiht Toadstool', 'Get 50 kills while the Recon Combat Specialty is active with the Power Drill', 'Multiplayer', ['Power Drill']);
+    await client.AddCamo('Thermal', 'Get 15 kills shortly after sprinting with the Power Drill', 'Multiplayer', ['Power Drill']);
     /////////////////////////////////////////////////////////////////////////////////////////
 
     // MASTERY CAMO'S MELEE WEAPONS /////////////////////////////////////////////////////////
@@ -189,4 +198,7 @@ module.exports = async (client) => {
     await client.AddCamo('Dark Spine', 'Get three triple kills or better with the specific weapon', 'Multiplayer', primarys);
     await client.AddCamo('Dark Matter', 'Get 5 kills without dying three times with the specific weapon', 'Multiplayer', melee);
     /////////////////////////////////////////////////////////////////////////////////////////
+
+
+    //======================== ZOMBIES ========================//
 };
