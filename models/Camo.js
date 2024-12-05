@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const WeaponScheme = new mongoose.Schema({
+const CamoScheme = new mongoose.Schema({
     camoName: {
         type: mongoose.SchemaTypes.String,
         required: true,
@@ -13,4 +13,4 @@ const WeaponScheme = new mongoose.Schema({
     }
 });
 
-module.exports = mongoose.model('Weapon', WeaponScheme);
+module.exports = mongoose.model('Wamo', CamoScheme);
