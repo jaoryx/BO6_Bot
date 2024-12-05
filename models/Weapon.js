@@ -8,6 +8,7 @@ const WeaponScheme = new mongoose.Schema({
     },
     camos: {
         type: mongoose.SchemaTypes.Array,
+        required: true,
         unique: true
     }
 });
