@@ -201,4 +201,9 @@ module.exports = async (client) => {
 
 
     //======================== ZOMBIES ========================//
+    // MILITARY CAMO'S PRIMARY WEAPONS //////////////////////////////////////////////////////
+    await client.AddCamo('', '', 'Zombies', primarys);
+    /////////////////////////////////////////////////////////////////////////////////////////
+
+    client.Log('All data has been created and added to the database!');
 };
