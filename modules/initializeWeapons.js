@@ -202,8 +202,20 @@ module.exports = async (client) => {
 
     //======================== ZOMBIES ========================//
     // MILITARY CAMO'S PRIMARY WEAPONS //////////////////////////////////////////////////////
-    await client.AddCamo('', '', 'Zombies', primarys);
+    await client.AddCamo('Slate', 'Get 100 critical kills', 'Zombies', primarys);
+    await client.AddCamo('Desert', 'Get 200 critical kills', 'Zombies', primarys);
+    await client.AddCamo('Evergreen', 'Get 300 critical kills', 'Zombies', primarys);
+    await client.AddCamo('Rugged', 'Get 400 critical kills', 'Zombies', primarys);
+    await client.AddCamo('Grim', 'Get 600 critical kills', 'Zombies', primarys);
+    await client.AddCamo('Stripe', 'Get 800 critical kills', 'Zombies', primarys);
+    await client.AddCamo('Oceanic', 'Get 1000 critical kills', 'Zombies', primarys);
+    await client.AddCamo('Whiteout', 'Get 1500 critical kills', 'Zombies', primarys);
+    await client.AddCamo('Purple Tiger', 'Get 2000 critical kills', 'Zombies', primarys);
     /////////////////////////////////////////////////////////////////////////////////////////
 
+    // SPECIAL CAMO'S PRIMARY WEAPONS ///////////////////////////////////////////////////////
+    // ASSAULT RIFLES
+    // https://www.thegamer.com/cod-bo6-zombies-weapon-camo-challenges-tips/
+    /////////////////////////////////////////////////////////////////////////////////////////
     client.Log('All data has been created and added to the database!');
 };
