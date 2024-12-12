@@ -215,7 +215,128 @@ module.exports = async (client) => {
 
     // SPECIAL CAMO'S PRIMARY WEAPONS ///////////////////////////////////////////////////////
     // ASSAULT RIFLES
-    // https://www.thegamer.com/cod-bo6-zombies-weapon-camo-challenges-tips/
+    await client.AddCamo('Liquify', 'Get 300 kills with Napalm Burst ammo installed.', 'Zombies', ['XM4']);
+    await client.AddCamo('Mainframe', 'Kill 30 Vermin.', 'Zombies', ['XM4']);
+
+    await client.AddCamo('Chlorine', 'Get 5 critical kills rapidly 15 times.', 'Zombies', ['AK-47']);
+    await client.AddCamo('Haunted', `Get 300 kills with this weapon while it's Pack-A-Punched.`, 'Zombies', ['AK-47']);
+
+    await client.AddCamo('Hyperion', 'Get 300 kills with a Rare+ variant.', 'Zombies', ['AMES 85']);
+    await client.AddCamo('Graveyard', 'Get 300 kills with Brain Rot ammo installed.', 'Zombies', ['AMES 85']);
+
+    await client.AddCamo('Night Stalker', 'Get 300 kills with Cryo Freeze ammo installed.', 'Zombies', ['GPR 91']);
+    await client.AddCamo('Frostblossom', 'Kill 100 enemies affected by your tactical.', 'Zombies', ['GPR 91']);
+
+    await client.AddCamo('Ghost Blossom', 'Kill 75 armored zombies.', 'Zombies', ['Model L']);
+    await client.AddCamo('Walnut', 'Get 5 critical kills rapidly 15 times.', 'Zombies', ['Model L']);
+
+    await client.AddCamo('Astral Pride', 'Kill 10 Manglers.', 'Zombies', ['Goblin MK2']);
+    await client.AddCamo('Blood Scent', 'Get 5 critical kills rapidly 15 times.', 'Zombies', ['Goblin MK2']);
+
+    await client.AddCamo('Malachite Steppes', 'Kill 30 Parasites.', 'Zombies', ['AS VAL']);
+    await client.AddCamo('Mountain Goat', 'Get 300 kills with Dead Wire ammo installed.', 'Zombies', ['AS VAL']);
+
+    await client.AddCamo('Sunny Splash', 'Get 300 kills with Cryo Freeze ammo installed.', 'Zombies', ['Krig C']);
+    await client.AddCamo('Crowsbane', 'Kill 100 enemies affected by your tactical.', 'Zombies', ['Krig C']);
+
+    // SMG'S
+    await client.AddCamo('Infrared', 'Kill 30 Parasites.', 'Zombies', ['C9']);
+    await client.AddCamo('Lynx', `Get 300 kills while it's Pack-A-Punched.`, 'Zombies', ['C9']);
+
+    await client.AddCamo('Phoenix', 'Get 300 kills with Dead Wire ammo installed.', 'Zombies', ['KSV']);
+    await client.AddCamo('Throttle', 'Get 300 hipfire kills.', 'Zombies', ['KSV']);
+
+    await client.AddCamo('Solemn', 'Get 5 critical kills rapidly 15 times.', 'Zombies', ['Tanto .22']);
+    await client.AddCamo('Aloha', `Get 300 kills while it's Pack-A-Punched.`, 'Zombies', ['Tanto .22']);
+
+    await client.AddCamo('Solvent', 'Get 300 kills with Cryo Freeze ammo installed.', 'Zombies', ['PP-919']);
+    await client.AddCamo('Stalking Shadow', `Get 10 kills without reloading 15 times.`, 'Zombies', ['PP-919']);
+
+    await client.AddCamo('Plunge', 'Get 300 kills with Napalm Burst ammo installed.', 'Zombies', ['Jackal PDW']);
+    await client.AddCamo('Distress', 'Get 300 hipfire kills.', 'Zombies', ['Jackal PDW']);
+
+    await client.AddCamo('Tequila Sunrise', 'Get 300 kills with a Rare+ variant.', 'Zombies', ['Kompakt 92']);
+    await client.AddCamo('Voidthorn', 'Get 300 point blank kills.', 'Zombies', ['Kompakt 92']);
+
+    await client.AddCamo('Whisper', 'Get 300 kills with Dead Wire ammo installed.', 'Zombies', ['Saug']);
+    await client.AddCamo('Limewave', 'Get 300 point blank kills.', 'Zombies', ['Saug']);
+
+    // SHOTGUNS
+    await client.AddCamo('Strawberry Mint', 'Get 300 kills with a Rare+ variant.', 'Zombies', ['Marine SP']);
+    await client.AddCamo('Peel Out', 'Get 300 hipfire kills.', 'Zombies', ['Marine SP']);
+
+    await client.AddCamo('Dream Eater', 'Kill 100 enemies affected by your tactical.', 'Zombies', ['ASG-89']);
+    await client.AddCamo('Coin-Op', 'Kill 30 Parasites.', 'Zombies', ['ASG-89']);
+
+    await client.AddCamo('Cinder Surge', 'Get 10 kills without reloading 15 times.', 'Zombies', ['Maelstrom']);
+    await client.AddCamo('Lunar Flutter', 'Get 300 hipfire kills.', 'Zombies', ['Maelstrom']);
+
+    // LMGS
+    await client.AddCamo('Vivid', 'Kill 10 Manglers.', 'Zombies', ['PU-21']);
+    await client.AddCamo('Justice', 'Get 300 hipfire kills.', 'Zombies', ['PU-21']);
+
+    await client.AddCamo('Hiss', 'Get 10 kills without reloading 15 times.', 'Zombies', ['XMG']);
+    await client.AddCamo('Acid Slide', 'Get 300 kills with Brain Rot ammo installed.', 'Zombies', ['XMG']);
+
+    await client.AddCamo('Impressionist', 'Get 300 point blank kills.', 'Zombies', ['GPMG-7']);
+    await client.AddCamo('Other World', 'Get 10 kills without reloading 15 times.', 'Zombies', ['GPMG-7']);
+
+    // MARKSMAN RIFLES
+    await client.AddCamo('Hyperspace', 'Kill 100 enemies affected by your tactical.', 'Zombies', ['SWAT 5.56']);
+    await client.AddCamo('Wrangler', 'Kill 75 armored zombies.', 'Zombies', ['SWAT 5.56']);
+
+    await client.AddCamo('Harvest', 'Kill 100 enemies affected by your tactical.', 'Zombies', ['Tsarkov 7.62']);
+    await client.AddCamo('Desert Sunset', 'Kill 300 enemies with Dead Wire ammo installed.', 'Zombies', ['Tsarkov 7.62']);
+
+    await client.AddCamo('Voidflame', 'Get 300 kills with Cryo Freeze ammo installed.', 'Zombies', ['AEK-973']);
+    await client.AddCamo('Blood Moon', 'Get 300 kills with Napalm Burst ammo installed.', 'Zombies', ['AEK-973']);
+
+    await client.AddCamo('Furybloom', 'Get 5 critical kills rapidly 15 times.', 'Zombies', ['DM-10']);
+    await client.AddCamo('Manta', 'Get 300 kills with a Rare+ variant.', 'Zombies', ['DM-10']);
+
+    // SNIPER RIFLES
+    await client.AddCamo('Strata', 'Get 300 kills with a Rare+ variant.', 'Zombies', ['LW3A1 Frostline']);
+    await client.AddCamo('Eventide', 'Kill 30 Parasites.', 'Zombies', ['LW3A1 Frostline']);
+
+    await client.AddCamo('Cartridge', 'Kill 300 zombies.', 'Zombies', ['SVD']);
+    await client.AddCamo('Integration', 'Get 5 critical kills rapidly 15 times.', 'Zombies', ['SVD']);
+
+    await client.AddCamo('Foxglove', 'Kill 10 Manglers.', 'Zombies', ['LR 7.62']);
+    await client.AddCamo('Overcast', 'Get 300 kills with Brain Rot ammo installed.', 'Zombies', ['LR 7.62']);
     /////////////////////////////////////////////////////////////////////////////////////////
+
+    // MILITARY CAMO'S SECONDARY WEAPONS ////////////////////////////////////////////////////
+    //// !!!!! TO DO !!!!!
+    /////////////////////////////////////////////////////////////////////////////////////////
+    
+    // SPECIAL CAMO'S SECONDARY WEAPONS /////////////////////////////////////////////////////
+    await client.AddCamo('Yottabyte', 'Get 300 kills with Cryo Freeze ammo installed.', 'Zombies', ['9mm PM']);
+    await client.AddCamo('Red Ring', 'Get 300 kills with Dead Wire ammo installed.', 'Zombies', ['9mm PM']);
+
+    await client.AddCamo('Hi-Fi', 'Kill 10 Manglers.', 'Zombies', ['Grekhova']);
+    await client.AddCamo('Ceres', 'Get 5 critical kills rapidly 15 times.', 'Zombies', ['Grekhova']);
+
+    await client.AddCamo('Velvetvine', 'Kill 300 zombies with a Rare+ variant.', 'Zombies', ['GS45']);
+    await client.AddCamo('Siamese', 'Get 300 hipfire kills.', 'Zombies', ['GS45']);
+
+    await client.AddCamo('Wavy', 'Get 300 point blank kills.', 'Zombies', ['Stryder .22']);
+    await client.AddCamo('Condemn', 'Kill 30 Vermin.', 'Zombies', ['Stryder .22']);
+    
+    await client.AddCamo('', '', 'Zombies', ['']);
+    await client.AddCamo('', '', 'Zombies', ['']);
+
+    await client.AddCamo('', '', 'Zombies', ['']);
+    await client.AddCamo('', '', 'Zombies', ['']);
+
+    await client.AddCamo('', '', 'Zombies', ['']);
+    await client.AddCamo('', '', 'Zombies', ['']);
+
+    await client.AddCamo('', '', 'Zombies', ['']);
+    await client.AddCamo('', '', 'Zombies', ['']);
+    /////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+    // https://www.thegamer.com/cod-bo6-zombies-weapon-camo-challenges-tips/
     client.Log('All data has been created and added to the database!');
 };
