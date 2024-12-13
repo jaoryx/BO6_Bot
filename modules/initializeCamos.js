@@ -146,7 +146,7 @@ module.exports = async (client) => {
     await client.AddCamo('Transcend', 'Get 50 kills while the Recon Combat Specilaty is active with the Stryder .22', 'Multiplayer', ['Stryder .22']);
 
     // LAUNCHERS
-    await client.AddCamo('Policia', 'Get 10 Direct Hit Kills with the Cigma 2B', 'Multiplayer', ['CIGMA 2B']);
+    await client.AddCamo('Policia', 'Get 10 Direct Hit Kills with the CIGMA 2B', 'Multiplayer', ['CIGMA 2B']);
     await client.AddCamo('Abstract', 'Destroy 10 Aerial Scorestreaks with the CIGMA 2B', 'Multiplayer', ['CIGMA 2B']);
 
     await client.AddCamo('Reboot', 'Get 10 Direct Hit Kills with the HE-1', 'Multiplayer', ['HE-1']);
@@ -204,15 +204,15 @@ module.exports = async (client) => {
 
     //======================== ZOMBIES ========================//
     // MILITARY CAMO'S PRIMARY WEAPONS //////////////////////////////////////////////////////
-    await client.AddCamo('Slate', 'Get 100 critical kills', 'Zombies', primarys);
-    await client.AddCamo('Desert', 'Get 200 critical kills', 'Zombies', primarys);
-    await client.AddCamo('Evergreen', 'Get 300 critical kills', 'Zombies', primarys);
-    await client.AddCamo('Rugged', 'Get 400 critical kills', 'Zombies', primarys);
-    await client.AddCamo('Grim', 'Get 600 critical kills', 'Zombies', primarys);
-    await client.AddCamo('Stripe', 'Get 800 critical kills', 'Zombies', primarys);
-    await client.AddCamo('Oceanic', 'Get 1000 critical kills', 'Zombies', primarys);
-    await client.AddCamo('Whiteout', 'Get 1500 critical kills', 'Zombies', primarys);
-    await client.AddCamo('Purple Tiger', 'Get 2000 critical kills', 'Zombies', primarys);
+    await client.AddCamo('Slate', 'Get 100 critical kills', 'Zombies', primarys.concat(['Pistol']));
+    await client.AddCamo('Desert', 'Get 200 critical kills', 'Zombies', primarys.concat(['Pistol']));
+    await client.AddCamo('Evergreen', 'Get 300 critical kills', 'Zombies', primarys.concat(['Pistol']));
+    await client.AddCamo('Rugged', 'Get 400 critical kills', 'Zombies', primarys.concat(['Pistol']));
+    await client.AddCamo('Grim', 'Get 600 critical kills', 'Zombies', primarys.concat(['Pistol']));
+    await client.AddCamo('Stripe', 'Get 800 critical kills', 'Zombies', primarys.concat(['Pistol']));
+    await client.AddCamo('Oceanic', 'Get 1000 critical kills', 'Zombies', primarys.concat(['Pistol']));
+    await client.AddCamo('Whiteout', 'Get 1500 critical kills', 'Zombies', primarys.concat(['Pistol']));
+    await client.AddCamo('Purple Tiger', 'Get 2000 critical kills', 'Zombies', primarys.concat(['Pistol']));
     /////////////////////////////////////////////////////////////////////////////////////////
 
     // SPECIAL CAMO'S PRIMARY WEAPONS ///////////////////////////////////////////////////////
@@ -334,8 +334,8 @@ module.exports = async (client) => {
     await client.AddCamo('Condemn', 'Kill 30 Vermin.', 'Zombies', ['Stryder .22']);
     
     // LAUNCHERS
-    await client.AddCamo('Cbrne', `Get 300 kills while the weapon is Pack-A-Punched.`, 'Zombies', ['Cigma 28']);
-    await client.AddCamo('Technique', 'Kill 75 armored zombies.', 'Zombies', ['Cigma 28']);
+    await client.AddCamo('Cbrne', `Get 300 kills while the weapon is Pack-A-Punched.`, 'Zombies', ['CIGMA 2B']);
+    await client.AddCamo('Technique', 'Kill 75 armored zombies.', 'Zombies', ['CIGMA 2B']);
 
     await client.AddCamo('Decrypt', 'Kill 30 Vermin.', 'Zombies', ['HE-1']);
     await client.AddCamo('Demeter', 'Get 300 kills with a Rare+ variant.', 'Zombies', ['HE-1']);
