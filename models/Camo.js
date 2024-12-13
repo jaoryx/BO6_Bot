@@ -19,4 +19,4 @@ const CamoScheme = new mongoose.Schema({
     }
 });
 
-module.exports = mongoose.model('Wamo', CamoScheme);
+module.exports = mongoose.model('Camo', CamoScheme);
