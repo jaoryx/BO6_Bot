@@ -46,8 +46,8 @@ module.exports = async (client) => {
     await client.AddCamo('Cherry Blossom', 'Get 50 kills while the Enforcer Combat Specialty is active with the Model LGet 50 kills while the Enforcer Combat Specialty is active with the Model L', 'Multiplayer', ['Model L']);
     await client.AddCamo('Cedar', 'Get 50 kills with a suppressor equipped on the Model L', 'Multiplayer', ['Model L']);
 
-    await client.AddCamo('Astral Cry', 'Get a kill without taking any damage 30 times with the Goblin Mk2', 'Multiplayer', ['Goblin Mk2']);
-    await client.AddCamo('Hammerhead', 'Get 20 kills with the underbarrel launcher attached to the Goblin Mk2', 'Multiplayer', ['Goblin Mk2']);
+    await client.AddCamo('Astral Cry', 'Get a kill without taking any damage 30 times with the Goblin MK2', 'Multiplayer', ['Goblin MK2']);
+    await client.AddCamo('Hammerhead', 'Get 20 kills with the underbarrel launcher attached to the Goblin MK2', 'Multiplayer', ['Goblin MK2']);
 
     await client.AddCamo('Crimson Steppes', 'Get 50 kills with the Recon Combat Specialty is active with the AS VAL', 'Multiplayer', ['AS VAL']);
     await client.AddCamo('Elk', 'Get 30 Hipfire Kills with the AS VAL', 'Multiplayer', ['AS VAL']);
