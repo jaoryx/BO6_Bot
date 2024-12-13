@@ -23,7 +23,7 @@ module.exports = async (client) => {
     await client.AddCamo('Savanna ', 'Get 15 headshots', 'Multiplayer', primarys.concat(['pistol']));
     await client.AddCamo('Splinter', 'Get 20 headshots', 'Multiplayer', primarys.concat(['pistol']));
     await client.AddCamo('Moss', 'Get 30 headshots', 'Multiplayer', primarys.concat(['pistol']));
-    await client.AddCamo('Shade', 'Get 40 headshots', 'Multiplayer', primarys.concat(['pistol']));
+    await client.AddCamo('Saboteur', 'Get 40 headshots', 'Multiplayer', primarys.concat(['pistol']));
     await client.AddCamo('Digital', 'Get 50 headshots', 'Multiplayer', primarys.concat(['pistol']));
     await client.AddCamo('Tide', 'Get 75 headshots', 'Multiplayer', primarys.concat(['pistol']));
     await client.AddCamo('Red Tiger', 'Get 100 headshots', 'Multiplayer', primarys.concat(['pistol']));
@@ -59,8 +59,8 @@ module.exports = async (client) => {
     await client.AddCamo('Kakapo', 'Get 2 kills without reloading 10 times with the KSV', 'Multiplayer', ['KSV']);
     await client.AddCamo('Throwback', 'Get 50 kills while moving with the KSV', 'Multiplayer', ['KSV']);
 
-    await client.AddCamo('Amorphous', 'Get 50 kills while moving with the Tanto. 22', 'Multiplayer', ['Tanto. 22']);
-    await client.AddCamo('Go Bananas', 'Get a kill without taking any damage 30 times with the Tanto .22', 'Multiplayer', ['Tanto. 22']);
+    await client.AddCamo('Amorphous', 'Get 50 kills while moving with the Tanto. 22', 'Multiplayer', ['Tanto .22']);
+    await client.AddCamo('Go Bananas', 'Get a kill without taking any damage 30 times with the Tanto .22', 'Multiplayer', ['Tanto .22']);
 
     await client.AddCamo('Radiant Bath', 'Get 30 Hipfire Kills with the PP-919', 'Multiplayer', ['PP-919']);
     await client.AddCamo('Midnight Prowl', 'Get 50 Kills with the Strategist Combat Specialty is active with the PP-919', 'Multiplayer', ['PP-919']);
@@ -125,7 +125,7 @@ module.exports = async (client) => {
     await client.AddCamo('Savanna ', 'Get 10 kills or scorestreak destructions', 'Multiplayer', secondarys);
     await client.AddCamo('Splinter', 'Get 15 kills or scorestreak destructions', 'Multiplayer', secondarys);
     await client.AddCamo('Moss', 'Get 20 kills or scorestreak destructions', 'Multiplayer', secondarys);
-    await client.AddCamo('Shade', 'Get 25 kills or scorestreak destructions', 'Multiplayer', secondarys);
+    await client.AddCamo('Saboteur', 'Get 25 kills or scorestreak destructions', 'Multiplayer', secondarys);
     await client.AddCamo('Digital', 'Get 30 kills or scorestreak destructions', 'Multiplayer', secondarys);
     await client.AddCamo('Tide', 'Get 40 kills or scorestreak destructions', 'Multiplayer', secondarys);
     await client.AddCamo('Red Tiger', 'Get 50 kills or scorestreak destructions', 'Multiplayer', secondarys);
@@ -175,7 +175,7 @@ module.exports = async (client) => {
     await client.AddCamo('Savanna ', 'Get 15 kills', 'Multiplayer', melee);
     await client.AddCamo('Splinter', 'Get 20 kills', 'Multiplayer', melee);
     await client.AddCamo('Moss', 'Get 30 kills', 'Multiplayer', melee);
-    await client.AddCamo('Shade', 'Get 40 kills', 'Multiplayer', melee);
+    await client.AddCamo('Saboteur', 'Get 40 kills', 'Multiplayer', melee);
     await client.AddCamo('Digital', 'Get 50 kills', 'Multiplayer', melee);
     await client.AddCamo('Tide', 'Get 75 kills', 'Multiplayer', melee);
     await client.AddCamo('Red Tiger', 'Get 100 kills', 'Multiplayer', melee);
@@ -195,7 +195,7 @@ module.exports = async (client) => {
     // MASTERY CAMO'S MELEE WEAPONS /////////////////////////////////////////////////////////
     await client.AddCamo('Gold', 'Get 10 Double Kills or better with the specific weapon', 'Multiplayer', melee);
     await client.AddCamo('Diamond', 'Get 3 kills without dying 10 times with the specific weapon', 'Multiplayer', melee);
-    await client.AddCamo('Dark Spine', 'Get three triple kills or better with the specific weapon', 'Multiplayer', primarys);
+    await client.AddCamo('Dark Spine', 'Get three triple kills or better with the specific weapon', 'Multiplayer', melee);
     await client.AddCamo('Dark Matter', 'Get 5 kills without dying three times with the specific weapon', 'Multiplayer', melee);
     /////////////////////////////////////////////////////////////////////////////////////////
 

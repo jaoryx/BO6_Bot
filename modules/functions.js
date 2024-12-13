@@ -11,11 +11,11 @@ async function AddCamo(name, requirement, camoType, weaponTypes) {
     await Camo.create({ camoName: name, camoRequirement: requirement, camoType, weaponTypes });
 }
 
-async function AddWeapon(name, camos) {
+async function AddWeapon(name, weaponType, camos) {
     if (!name || !camos || typeof(name) !== 'string' || !Array.isArray(camos)) {
         return 'Not empty!';
     } else {
-        await Weapon.create({ weaponName: name, camos: camos });
+        await Weapon.create({ weaponName: name, camos: camos, weaponType: weaponType });
     }
 }
 
