@@ -18,15 +18,15 @@ module.exports = async (client) => {
     //======================== MULTIPLAYER ========================//
 
     // MILITARY CAMO'S PRIMARY WEAPONS //////////////////////////////////////////////////////
-    await client.AddCamo('Granite', 'Get 5 headshots', 'Multiplayer', primarys);
-    await client.AddCamo('Woodland', 'Get 10 headshots', 'Multiplayer', primarys);
-    await client.AddCamo('Savanna ', 'Get 15 headshots', 'Multiplayer', primarys);
-    await client.AddCamo('Splinter', 'Get 20 headshots', 'Multiplayer', primarys);
-    await client.AddCamo('Moss', 'Get 30 headshots', 'Multiplayer', primarys);
-    await client.AddCamo('Shade', 'Get 40 headshots', 'Multiplayer', primarys);
-    await client.AddCamo('Digital', 'Get 50 headshots', 'Multiplayer', primarys);
-    await client.AddCamo('Tide', 'Get 75 headshots', 'Multiplayer', primarys);
-    await client.AddCamo('Red Tiger', 'Get 100 headshots', 'Multiplayer', primarys);
+    await client.AddCamo('Granite', 'Get 5 headshots', 'Multiplayer', primarys.concat(['pistol']));
+    await client.AddCamo('Woodland', 'Get 10 headshots', 'Multiplayer', primarys.concat(['pistol']));
+    await client.AddCamo('Savanna ', 'Get 15 headshots', 'Multiplayer', primarys.concat(['pistol']));
+    await client.AddCamo('Splinter', 'Get 20 headshots', 'Multiplayer', primarys.concat(['pistol']));
+    await client.AddCamo('Moss', 'Get 30 headshots', 'Multiplayer', primarys.concat(['pistol']));
+    await client.AddCamo('Shade', 'Get 40 headshots', 'Multiplayer', primarys.concat(['pistol']));
+    await client.AddCamo('Digital', 'Get 50 headshots', 'Multiplayer', primarys.concat(['pistol']));
+    await client.AddCamo('Tide', 'Get 75 headshots', 'Multiplayer', primarys.concat(['pistol']));
+    await client.AddCamo('Red Tiger', 'Get 100 headshots', 'Multiplayer', primarys.concat(['pistol']));
     /////////////////////////////////////////////////////////////////////////////////////////
 
     // SPECIAL CAMO'S PRIMARY WEAPONS ///////////////////////////////////////////////////////
@@ -153,8 +153,8 @@ module.exports = async (client) => {
     await client.AddCamo('Dreamer', 'Destroy 10 scorestreaks or enemy equipment with the HE-1', 'Multiplayer', ['HE-1']);
 
     // SPECIALS
-    await client.AddCamo('Nebulon', 'Get 30 kills shortly after sprinting with the Sirin 9mm', 'Multiplayer', ['Sirin 9mm']);
-    await client.AddCamo('Enchanted', 'Get 50 kills while moving with the Sirin 9mm', 'Multiplayer', ['Sirin 9mm']);
+    //await client.AddCamo('Nebulon', 'Get 30 kills shortly after sprinting with the Sirin 9mm', 'Multiplayer', ['Sirin 9mm']);
+    //await client.AddCamo('Enchanted', 'Get 50 kills while moving with the Sirin 9mm', 'Multiplayer', ['Sirin 9mm']);
     /////////////////////////////////////////////////////////////////////////////////////////
 
     // MASTERY CAMO'S PRIMARY WEAPONS ///////////////////////////////////////////////////////
@@ -198,6 +198,8 @@ module.exports = async (client) => {
     await client.AddCamo('Dark Spine', 'Get three triple kills or better with the specific weapon', 'Multiplayer', primarys);
     await client.AddCamo('Dark Matter', 'Get 5 kills without dying three times with the specific weapon', 'Multiplayer', melee);
     /////////////////////////////////////////////////////////////////////////////////////////
+
+
 
 
     //======================== ZOMBIES ========================//
@@ -268,8 +270,8 @@ module.exports = async (client) => {
     await client.AddCamo('Dream Eater', 'Kill 100 enemies affected by your tactical.', 'Zombies', ['ASG-89']);
     await client.AddCamo('Coin-Op', 'Kill 30 Parasites.', 'Zombies', ['ASG-89']);
 
-    await client.AddCamo('Cinder Surge', 'Get 10 kills without reloading 15 times.', 'Zombies', ['Maelstrom']);
-    await client.AddCamo('Lunar Flutter', 'Get 300 hipfire kills.', 'Zombies', ['Maelstrom']);
+    //await client.AddCamo('Cinder Surge', 'Get 10 kills without reloading 15 times.', 'Zombies', ['Maelstrom']);
+    //await client.AddCamo('Lunar Flutter', 'Get 300 hipfire kills.', 'Zombies', ['Maelstrom']);
 
     // LMGS
     await client.AddCamo('Vivid', 'Kill 10 Manglers.', 'Zombies', ['PU-21']);
@@ -306,10 +308,19 @@ module.exports = async (client) => {
     /////////////////////////////////////////////////////////////////////////////////////////
 
     // MILITARY CAMO'S SECONDARY WEAPONS ////////////////////////////////////////////////////
-    //// !!!!! TO DO !!!!!
+    await client.AddCamo('Slate', 'Get 100 kills', 'Zombies', ['Launcher', 'Melee']);
+    await client.AddCamo('Desert', 'Get 200 kills', 'Zombies', ['Launcher', 'Melee']);
+    await client.AddCamo('Evergreen', 'Get 300 kills', 'Zombies', ['Launcher', 'Melee']);
+    await client.AddCamo('Rugged', 'Get 400 kills', 'Zombies', ['Launcher', 'Melee']);
+    await client.AddCamo('Grim', 'Get 600 kills', 'Zombies', ['Launcher', 'Melee']);
+    await client.AddCamo('Stripe', 'Get 800 kills', 'Zombies', ['Launcher', 'Melee']);
+    await client.AddCamo('Oceanic', 'Get 1000 kills', 'Zombies', ['Launcher', 'Melee']);
+    await client.AddCamo('Whiteout', 'Get 1500 kills', 'Zombies', ['Launcher', 'Melee']);
+    await client.AddCamo('Purple Tiger', 'Get 2000 kills', 'Zombies', ['Launcher', 'Melee']);
     /////////////////////////////////////////////////////////////////////////////////////////
     
     // SPECIAL CAMO'S SECONDARY WEAPONS /////////////////////////////////////////////////////
+    // PISTOLS
     await client.AddCamo('Yottabyte', 'Get 300 kills with Cryo Freeze ammo installed.', 'Zombies', ['9mm PM']);
     await client.AddCamo('Red Ring', 'Get 300 kills with Dead Wire ammo installed.', 'Zombies', ['9mm PM']);
 
@@ -322,21 +333,30 @@ module.exports = async (client) => {
     await client.AddCamo('Wavy', 'Get 300 point blank kills.', 'Zombies', ['Stryder .22']);
     await client.AddCamo('Condemn', 'Kill 30 Vermin.', 'Zombies', ['Stryder .22']);
     
-    await client.AddCamo('', '', 'Zombies', ['']);
-    await client.AddCamo('', '', 'Zombies', ['']);
+    // LAUNCHERS
+    await client.AddCamo('Cbrne', `Get 300 kills while the weapon is Pack-A-Punched.`, 'Zombies', ['Cigma 28']);
+    await client.AddCamo('Technique', 'Kill 75 armored zombies.', 'Zombies', ['Cigma 28']);
 
-    await client.AddCamo('', '', 'Zombies', ['']);
-    await client.AddCamo('', '', 'Zombies', ['']);
+    await client.AddCamo('Decrypt', 'Kill 30 Vermin.', 'Zombies', ['HE-1']);
+    await client.AddCamo('Demeter', 'Get 300 kills with a Rare+ variant.', 'Zombies', ['HE-1']);
 
-    await client.AddCamo('', '', 'Zombies', ['']);
-    await client.AddCamo('', '', 'Zombies', ['']);
+    // MELEES
+    await client.AddCamo('Dying Bloom', 'Get 300 kills with Brain Rot ammo installed.', 'Zombies', ['Knife']);
+    await client.AddCamo('Vacation Legend', 'Kill 75 armored zombies.', 'Zombies', ['Knife']);
 
-    await client.AddCamo('', '', 'Zombies', ['']);
-    await client.AddCamo('', '', 'Zombies', ['']);
+    await client.AddCamo('Banished', 'Get 300 kills with a Rare+ variant.', 'Zombies', ['Baseball Bat']);
+    await client.AddCamo('Contort', 'Kill 30 Vermin.', 'Zombies', ['Baseball Bat']);
+
+    await client.AddCamo('Glimmering Grove', 'Get 300 kills with a Rare+ variant.', 'Zombies', ['Power Drill']);
+    await client.AddCamo('Shimmer', 'Kill 10 Manglers.', 'Zombies', ['Power Drill']);
     /////////////////////////////////////////////////////////////////////////////////////////
 
+    // MASTERY CAMO'S ALL WEAPONS ///////////////////////////////////////////////////////////
+    await client.AddCamo('Mystic Gold', 'Get 10 kills rapidly 15 times.', 'Zombies', primarys.concat(secondarys).concat(melee));
+    await client.AddCamo('Opal', 'Kill 30 special zombies.', 'Zombies', primarys.concat(secondarys).concat(melee));
+    await client.AddCamo('Afterlife', 'Get 20 consecutive kills 10 times without taking damage.', 'Zombies', primarys.concat(secondarys).concat(melee));
+    await client.AddCamo('Nebula', 'Kill 10 elite zombies.', 'Zombies', primarys.concat(secondarys).concat(melee));
+    /////////////////////////////////////////////////////////////////////////////////////////
 
-
-    // https://www.thegamer.com/cod-bo6-zombies-weapon-camo-challenges-tips/
     client.Log('All data has been created and added to the database!');
 };
