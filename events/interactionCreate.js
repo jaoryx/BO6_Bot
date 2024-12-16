@@ -13,6 +13,7 @@ module.exports = {
         try {     
             await command.execute(interaction);
         } catch (error) {
+            console.log(error)
             client.Log(`[ERROR]: Error in interactionCreate (while executing ${interaction.commandName}): \n${error}`);
             if (interaction.replied || interaction.deferred) {
                 await interaction.followUp({ content: 'There was an error while executing this command!', ephemeral: true });
