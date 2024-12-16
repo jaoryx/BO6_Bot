@@ -27,4 +27,8 @@ async function AddWeaponType(name) {
     }
 }
 
-module.exports = { Log, AddWeapon, AddWeaponType, AddCamo }
+async function GetWeapons() {
+    return await Weapon.find({});
+}
+
+module.exports = { Log, AddWeapon, AddWeaponType, AddCamo, GetWeapons }
