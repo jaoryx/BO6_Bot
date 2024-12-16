@@ -8,7 +8,6 @@ module.exports = {
 	async execute(client) {
 		client.weapons = await client.GetWeapons();
 		client.Log(`Weapons loaded!`);
-		console.log(client.weapons);
 		client.Log(`Ready! Logged in as ${client.user.tag}`);
 		// ONLY HAPPENS ONCE THE FIRST TIME THE BOT EVER BOOTS
 		//initializeCamos(client);
