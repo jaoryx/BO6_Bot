@@ -60,7 +60,7 @@ module.exports = {
 
 		btnCollector.on('collect', async (i) => {
 			if (i.user.id !== interaction.user.id) {
-				return i.reply({ content: `You cannot use this button!`, ephemeral: true });
+				return i.reply({ content: `You cannot interact with someone elses command!`, ephemeral: true });
 			}
 
 			await i.deferUpdate();
