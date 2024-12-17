@@ -54,6 +54,8 @@ module.exports = {
 
 		const msg = await interaction.editReply({ components: [weaponSelectMenuRow1, buttons] });
 
+		interaction.client.stringSelectReplies[interaction.user.id] = { weapon: "", mode: "", camo: "", msg };
+
 		const btnCollector = await msg.createMessageComponentCollector({ componentType: ComponentType.Button, time: 60_000 });
 
 		btnCollector.on('collect', async (i) => {

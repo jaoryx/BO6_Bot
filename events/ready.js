@@ -6,6 +6,7 @@ module.exports = {
 	name: Events.ClientReady,
 	once: true,
 	async execute(client) {
+		client.stringSelectReplies = [];
 		client.weapons = await client.GetWeapons();
 		client.Log(`Weapons loaded!`);
 		client.Log(`Ready! Logged in as ${client.user.tag}`);
