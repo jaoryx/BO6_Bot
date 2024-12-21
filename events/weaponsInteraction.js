@@ -1,4 +1,4 @@
-const { Events, StringSelectMenuBuilder, StringSelectMenuOptionBuilder, ActionRowBuilder } = require('discord.js');
+const { Events, StringSelectMenuBuilder, StringSelectMenuOptionBuilder, ActionRowBuilder, ButtonBuilder, ButtonStyle } = require('discord.js');
  
 module.exports = {
     name: Events.InteractionCreate,
@@ -63,7 +63,21 @@ module.exports = {
 
             let content = `**Weapon:** ${userSelectReplies.weapon}\n**Gamemode:** ${userSelectReplies.mode}\n**Camo:** ${userSelectReplies.camo}`;
 
-            userSelectReplies.msg.edit({ content, components: [] });
+            const add = new ButtonBuilder()
+                .setCustomId('addcamo')
+                .setEmoji('✅')
+                .setLabel('Add camo')
+                .setStyle(ButtonStyle.Success);
+            
+            const remove = new ButtonBuilder()
+                .setCustomId('removecamo')
+                .setEmoji('✖')
+                .setLabel('Remove camo')
+                .setStyle(ButtonStyle.Danger);
+
+            let components = [new ActionRowBuilder().setComponents(add, remove)]
+
+            userSelectReplies.msg.edit({ content, components });
         }
     },
 };

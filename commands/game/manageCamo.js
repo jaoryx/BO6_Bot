@@ -63,6 +63,8 @@ module.exports = {
 				return i.reply({ content: `You cannot interact with someone elses command!`, ephemeral: true });
 			}
 
+			if (i.customId !== 'prev' && i.customId !== 'next') return;
+
 			await i.deferUpdate();
 
 			switch (i.customId) {
