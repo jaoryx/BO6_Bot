@@ -1,5 +1,10 @@
 const { Events, StringSelectMenuBuilder, StringSelectMenuOptionBuilder, ActionRowBuilder, ButtonBuilder, ButtonStyle } = require('discord.js');
  
+const modes = {
+    "Multiplayer": "mp",
+    "Zombies": "zm"
+}
+
 module.exports = {
     name: Events.InteractionCreate,
     once: false,
@@ -63,6 +68,10 @@ module.exports = {
 
             let content = `**Weapon:** ${userSelectReplies.weapon}\n**Gamemode:** ${userSelectReplies.mode}\n**Camo:** ${userSelectReplies.camo}`;
 
+            let userData = await client.GetUser(interaction.user.id);
+            let weapon = userData[modes[userSelectReplies.mode]].find(el => el.weaponName == userSelectReplies.weapon);
+            let camo = weapon.camos.find(el => el.camoName == userSelectReplies.camo);
+
             const add = new ButtonBuilder()
                 .setCustomId('addcamo')
                 .setEmoji('✅')
@@ -74,6 +83,12 @@ module.exports = {
                 .setEmoji('✖')
                 .setLabel('Remove camo')
                 .setStyle(ButtonStyle.Danger);
+
+            if (camo.obtained) {
+                add.setDisabled(true);
+            } else {
+                remove.setDisabled(true);
+            }
 
             let components = [new ActionRowBuilder().setComponents(add, remove)]
 
