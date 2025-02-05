@@ -25,6 +25,14 @@ async function GetUser(userId) {
     return userData
 }
 
+async function SaveUser(userId, dataToSave)
+{
+    await User.findOneAndUpdate(
+        {userId},
+        dataToSave
+    );
+}
+
 async function AddCamo(name, requirement, camoType, weaponTypes) {
     await Camo.create({ camoName: name, camoRequirement: requirement, camoType, weaponTypes });
 }
@@ -49,4 +57,4 @@ async function GetWeapons() {
     return await Weapon.find({});
 }
 
-module.exports = { Log, AddWeapon, AddWeaponType, AddCamo, GetWeapons, GetUser }
+module.exports = { Log, AddWeapon, AddWeaponType, AddCamo, GetWeapons, GetUser, SaveUser }
