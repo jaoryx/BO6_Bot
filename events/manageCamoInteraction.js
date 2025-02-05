@@ -15,7 +15,8 @@ module.exports = {
         await interaction.deferUpdate(); 
 
         if (interaction.customId === 'addcamo') {
-            console.log(userSelectReplies);
+            //console.log(userSelectReplies);
+            let userData = await client.GetUser(interaction.user.id);
         } else if (interaction.customId === 'removecamo') {
             
         }
