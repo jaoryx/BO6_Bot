@@ -5,11 +5,11 @@ module.exports = {
 		.setName('status')
 		.setDescription('Shows how far you are collecting camos'),
 	async execute(interaction) {
-        const statusEmbed = new EmbedBuilder()
+        const loadingEmbed = new EmbedBuilder()
             .setColor(Colors.DarkOrange)
             .setDescription(`<a:loading:1336992449071157260> Loading stats...`)
 
-        await interaction.reply({ embeds: [statusEmbed] });
+        await interaction.reply({ embeds: [loadingEmbed] });
 
         let userData = await interaction.client.GetUser(interaction.user.id);
 
@@ -110,5 +110,97 @@ module.exports = {
 
         totalCamos = mpCamos + zmCamos;
         totalObtained = mpObtained + zmObtained;
+
+        let statusEmbed = new EmbedBuilder()
+            .setTitle(`Black Ops 6 Tracking Status of ${interaction.user.username}`)
+            .setColor(Colors.DarkOrange)
+            .addFields(
+                {
+                    name: `Total Camo's:`,
+                    value: `${totalObtained}/${totalCamos}`,
+                },
+                {
+                    name: `Multiplayer Camo's:`,
+                    value: `${mpObtained}/${mpCamos}`,
+                    inline: true
+                },
+                {
+                    name: `Zombies Camo's:`,
+                    value: `${zmObtained}/${zmCamos}`,
+                    inline: true
+                },
+                // MULTIPLAYER CAMO'S
+                {
+                    name: `\u200b`,
+                    value: `**Multiplayer Mastery Camo's**`
+                },
+                {
+                    name: `<:gold:1339210850413838346> Gold:`,
+                    value: `${goldObtained}/${totalGoldCamos}`,
+                    inline: true
+                },
+                {
+                    name: `<:diamond:1339210856621150290> Diamond:`,
+                    value: `${diamondObtained}/${totalDiamondCamos}`,
+                    inline: true
+                },
+                {
+                    name: `\u200b`,
+                    value: `\u200b`,
+                    inline: true
+                },
+                {
+                    name: `<:darkspine:1339210854033391617> Dark Spine:`,
+                    value: `${darkSpineObtained}/${totalDarkSpineCamos}`,
+                    inline: true
+                },
+                {
+                    name: `<:darkmatter:1339210852615716986> Dark Matter:`,
+                    value: `${darkMatterObtained}/${totalDarkMatterCamos}`,
+                    inline: true
+                },
+                {
+                    name: `\u200b`,
+                    value: `\u200b`,
+                    inline: true
+                },
+                // ZOMBIES CAMO'S
+                {
+                    name: `\u200b`,
+                    value: `**Zombies Mastery Camo's**`
+                },
+                {
+                    name: `<:mysticgold:1339211022535233556> Mystic Gold:`,
+                    value: `${mysticGoldObtained}/${totalMysticGoldCamos}`,
+                    inline: true
+                },
+                {
+                    name: `<:opal:1339211018500309026> Opal:`,
+                    value: `${opalObtained}/${totalOpalCamos}`,
+                    inline: true
+                },
+                {
+                    name: `\u200b`,
+                    value: `\u200b`,
+                    inline: true
+                },
+                {
+                    name: `<:afterlife:1339211020652118176> Afterlife:`,
+                    value: `${afterlifeObtained}/${totalAfterlifeCamos}`,
+                    inline: true
+                },
+                {
+                    name: `<:nebula:1339211023999172639> Nebula:`,
+                    value: `${nebulaObtained}/${totalNebulaCamos}`,
+                    inline: true
+                },
+                {
+                    name: `\u200b`,
+                    value: `\u200b`,
+                    inline: true
+                },
+            );
+
+        await interaction.editReply({ embeds: [statusEmbed] });
     }
 }
