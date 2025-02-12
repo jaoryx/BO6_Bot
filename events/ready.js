@@ -27,7 +27,6 @@ module.exports = {
 
 			return indexA - indexB;
 		});
-		console.log(client.weapons);
 		client.Log(`Weapons loaded!`);
 		client.Log(`Ready! Logged in as ${client.user.tag}`);
 		// ONLY HAPPENS ONCE THE FIRST TIME THE BOT EVER BOOTS
