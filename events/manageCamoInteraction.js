@@ -1,4 +1,4 @@
-const { Events, StringSelectMenuBuilder, StringSelectMenuOptionBuilder, ActionRowBuilder, ButtonBuilder, ButtonStyle } = require('discord.js');
+const { Events } = require('discord.js');
 
 const modes = {
     "Multiplayer": "mp",
@@ -30,7 +30,6 @@ module.exports = {
         } else if (interaction.customId === 'removecamo') {
             camo.obtained = false;
             msg = `The **${userSelectReplies.camo}** camo for the ${weapon.weaponType} **${userSelectReplies.weapon}** has been removed from your profile!`;
-
         }
 
         await userSelectReplies.msg.edit({ content: msg, components: [] });
