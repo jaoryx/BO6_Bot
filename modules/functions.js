@@ -11,22 +11,29 @@ function Log(message) {
 async function GetUser(userId) {
     let userData = await User.findOne({ userId });
     if (!userData) {
-        let weapons = await GetWeapons();
         userData = { userId, mp: [], zm: [] };
-        weapons.forEach(weapon => {
+        await User.create(userData);
+    }
+    userData = await UpdateUser(userData);
+    return userData;
+}
+
+async function UpdateUser(userData) {
+    let weapons = await GetWeapons();
+    weapons.forEach(weapon => {
+        if (!userData.mp.find(el => el.weaponName === weapon.weaponName)) {
             weapon.camos.forEach(camo => camo.obtained = false);
             let mpCamos = weapon.camos.filter(el => el.camoType === "Multiplayer");
             let zmCamos = weapon.camos.filter(el => el.camoType === "Zombies");
             userData.mp.push({ weaponName: weapon.weaponName, weaponType: weapon.weaponType, camos: mpCamos });
-            userData.zm.push({ weaponName: weapon.weaponName, weaponType: weapon.weaponType, camos: zmCamos });
-        });
-        await User.create(userData);
-    }
-    return userData
+            userData.zm.push({ weaponName: weapon.weaponName, weaponType: weapon.weaponType, camos: zmCamos });    
+        }
+    });
+    await SaveUser(userData.userId, { mp: userData.mp, zm: userData.zm });
+    return userData;
 }
 
-async function SaveUser(userId, dataToSave)
-{
+async function SaveUser(userId, dataToSave) {
     await User.findOneAndUpdate(
         {userId},
         dataToSave
@@ -57,4 +64,4 @@ async function GetWeapons() {
     return await Weapon.find({});
 }
 
-module.exports = { Log, AddWeapon, AddWeaponType, AddCamo, GetWeapons, GetUser, SaveUser }
+module.exports = { Log, AddWeapon, AddWeaponType, AddCamo, GetWeapons, GetUser, SaveUser, UpdateUser }
