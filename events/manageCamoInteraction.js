@@ -6,6 +6,7 @@ const modes = {
 }
 
 const camoIndexes = {
+    0: [0],
     1: [0, 1],
     2: [0, 1, 2],
     3: [0, 1, 2, 3],
@@ -50,7 +51,8 @@ module.exports = {
                 weapon.camos[index].obtained = true;
             });
             //camo.obtained = true;
-            msg = `The **${userSelectReplies.camo}** camo and the camo's below for the ${weapon.weaponType} **${userSelectReplies.weapon}** has been added to your profile!`;
+            if (camoIndexesToUnlock.length === 1) msg = `The **${userSelectReplies.camo}** camo for the ${weapon.weaponType} **${userSelectReplies.weapon}** has been added to your profile!`;
+            else msg = `The **${userSelectReplies.camo}** camo and the camo's below for the ${weapon.weaponType} **${userSelectReplies.weapon}** have been added to your profile!`;
         } else if (interaction.customId === 'removecamo') {
             camo.obtained = false;
             msg = `The **${userSelectReplies.camo}** camo for the ${weapon.weaponType} **${userSelectReplies.weapon}** has been removed from your profile!`;
