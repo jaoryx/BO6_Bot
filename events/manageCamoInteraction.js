@@ -28,6 +28,7 @@ module.exports = {
     once: false,
     async execute(interaction, client) {
         if (!interaction.isButton()) return;
+        if (interaction.customId !== 'addcamo' && interaction.customId !== 'removecamo') return;
 
         let userSelectReplies = client.stringSelectReplies[interaction.user.id];
 

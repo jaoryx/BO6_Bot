@@ -17,7 +17,8 @@ module.exports = {
 	name: Events.ClientReady,
 	once: true,
 	async execute(client) {
-		client.stringSelectReplies = [];
+		client.stringSelectReplies = []; // This is for the manageCamo command
+		client.weaponDetails = []; // This is for the addWeapon command
 		client.weapons = await client.GetWeapons();
 		client.weapons.sort((a, b) => {
 			let indexA = weaponTypes.findIndex(el => el === a.weaponType);
