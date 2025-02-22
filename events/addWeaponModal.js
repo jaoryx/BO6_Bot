@@ -1,4 +1,5 @@
 const { Events, ActionRowBuilder, ModalBuilder, TextInputBuilder, TextInputStyle, ButtonBuilder, ButtonStyle, EmbedBuilder } = require('discord.js');
+const Camo = require('../models/Camo');
 
 const defaultMpCamos = [
     'Granite',
@@ -160,10 +161,44 @@ module.exports = {
                 weaponDetails.msg.edit({ embeds: [embed], components: [btnRow] });
             }
         } else if (interaction.customId === 'confirmWeapon') {
+            await interaction.deferUpdate();
             let weaponDetails = client.weaponDetails[interaction.user.id];
+
+            for (let index = 0; index < weaponDetails.specialCamos.length; index++) {
+                const camo = weaponDetails.specialCamos[index];
+                await client.AddCamo(camo.name, camo.desc, camo.mode, [weaponDetails.name]);
+            }
 
             let mpCamos = weaponDetails.specialCamos.filter(el => el.mode === 'Multiplayer');
             let zmCamos = weaponDetails.specialCamos.filter(el => el.mode === 'Zombies');
+
+            let mpCamosNames = defaultMpCamos.slice();
+            mpCamosNames[9] = mpCamos[0].name;
+            mpCamosNames[10] = mpCamos[1].name;
+
+            let zmCamosNames = defaultZmCamos.slice();
+            zmCamosNames[9] = zmCamos[0].name;
+            zmCamosNames[10] = zmCamos[1].name;
+
+            let weaponCamos = [];
+
+            let dbCamos = await Camo.find({});
+
+            for (let index = 0; index < mpCamosNames.length; index++) {
+                const camoName = mpCamosNames[index];
+                const camo = dbCamos.find(el => el.camoName === camoName && (el.weaponTypes.includes(weaponDetails.name) || el.weaponTypes.includes(weaponDetails.type)));
+                weaponCamos.push(camo);
+            }
+
+            for (let index = 0; index < zmCamosNames.length; index++) {
+                const camoName = zmCamosNames[index];
+                const camo = dbCamos.find(el => el.camoName === camoName && (el.weaponTypes.includes(weaponDetails.name) || el.weaponTypes.includes(weaponDetails.type)));
+                weaponCamos.push(camo);
+            }
+
+            await client.AddWeapon(weaponDetails.name, weaponDetails.type, weaponCamos);
+
+            weaponDetails.msg.edit({ content: `The ${weaponDetails.type} **${weaponDetails.name}** has been added to the database!`, components: [] });
         }
     },
 };
