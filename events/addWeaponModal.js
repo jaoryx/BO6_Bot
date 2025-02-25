@@ -196,7 +196,8 @@ module.exports = {
                 weaponCamos.push(camo);
             }
 
-            //await client.AddWeapon(weaponDetails.name, weaponDetails.type, weaponCamos);
+            await client.AddWeapon(weaponDetails.name, weaponDetails.type, weaponCamos);
+            client.weapons = await client.GetWeapons();
 
             weaponDetails.msg.edit({ content: `The ${weaponDetails.type} **${weaponDetails.name}** has been added to the database!`, components: [], embeds: [] });
         }

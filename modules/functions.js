@@ -8,6 +8,19 @@ function Log(message) {
     console.log(logMsg);
 }
 
+const weaponTypes = [
+	"Assault Rifle",
+	"SMG",
+	"Shotgun",
+	"LMG",
+	"Marksman Rifle",
+	"Sniper Rifle",
+	"Pistol",
+	"Launcher",
+	"Melee",
+	"Special"
+]
+
 async function GetUser(userId) {
     let userData = await User.findOne({ userId });
     if (!userData) {
@@ -61,7 +74,14 @@ async function AddWeaponType(name) {
 }
 
 async function GetWeapons() {
-    return await Weapon.find({});
+    let weapons = await Weapon.find({});
+    weapons.sort((a, b) => {
+        let indexA = weaponTypes.findIndex(el => el === a.weaponType);
+        let indexB = weaponTypes.findIndex(el => el === b.weaponType);
+
+        return indexA - indexB;
+    });
+    return weapons;
 }
 
 module.exports = { Log, AddWeapon, AddWeaponType, AddCamo, GetWeapons, GetUser, SaveUser, UpdateUser }
