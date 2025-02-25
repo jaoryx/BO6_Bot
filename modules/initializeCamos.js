@@ -20,7 +20,7 @@ module.exports = async (client) => {
     // MILITARY CAMO'S PRIMARY WEAPONS //////////////////////////////////////////////////////
     await client.AddCamo('Granite', 'Get 5 headshots', 'Multiplayer', primarys.concat(['pistol']));
     await client.AddCamo('Woodland', 'Get 10 headshots', 'Multiplayer', primarys.concat(['pistol']));
-    await client.AddCamo('Savanna ', 'Get 15 headshots', 'Multiplayer', primarys.concat(['pistol']));
+    await client.AddCamo('Savanna', 'Get 15 headshots', 'Multiplayer', primarys.concat(['pistol']));
     await client.AddCamo('Splinter', 'Get 20 headshots', 'Multiplayer', primarys.concat(['pistol']));
     await client.AddCamo('Moss', 'Get 30 headshots', 'Multiplayer', primarys.concat(['pistol']));
     await client.AddCamo('Saboteur', 'Get 40 headshots', 'Multiplayer', primarys.concat(['pistol']));
@@ -122,7 +122,7 @@ module.exports = async (client) => {
     // MILITARY CAMO'S SECONDARY WEAPONS ////////////////////////////////////////////////////
     await client.AddCamo('Granite', 'Get 2 kills or scorestreak destructions', 'Multiplayer', secondarys);
     await client.AddCamo('Woodland', 'Get 5 kills or scorestreak destructions', 'Multiplayer', secondarys);
-    await client.AddCamo('Savanna ', 'Get 10 kills or scorestreak destructions', 'Multiplayer', secondarys);
+    await client.AddCamo('Savanna', 'Get 10 kills or scorestreak destructions', 'Multiplayer', secondarys);
     await client.AddCamo('Splinter', 'Get 15 kills or scorestreak destructions', 'Multiplayer', secondarys);
     await client.AddCamo('Moss', 'Get 20 kills or scorestreak destructions', 'Multiplayer', secondarys);
     await client.AddCamo('Saboteur', 'Get 25 kills or scorestreak destructions', 'Multiplayer', secondarys);
