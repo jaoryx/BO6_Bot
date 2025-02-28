@@ -21,38 +21,31 @@ module.exports = {
 
 		const buttons = new ActionRowBuilder().setComponents(prev, next);
 
-		// Select menu's creation
-        let selectWeaponMenu1 = new StringSelectMenuBuilder()
-			.setCustomId('weaponSelect')
-			.setPlaceholder('Select a weapon you want to change camos from');
+		let amountOfStringSelectMenus = Math.ceil(interaction.client.weapons.length / 25);
+		let actionRows = [];
 
-		for (let index = 0; index < 25; index++) {
-			selectWeaponMenu1.addOptions(new StringSelectMenuOptionBuilder()
-				.setLabel(interaction.client.weapons[index].weaponName)
-				.setValue(interaction.client.weapons[index].weaponName)
-				.setDescription(interaction.client.weapons[index].weaponType)
-			);
+		for (let i = 0; i < amountOfStringSelectMenus; i++) {
+			let selectMenu = new StringSelectMenuBuilder()
+				.setCustomId('weaponSelect')
+				.setPlaceholder('Select a weapon you want to change camos from');
+
+			let forLimit = i === (amountOfStringSelectMenus - 1) ? interaction.client.weapons.length : (25 * i) + 25;
+
+			for (let index = 25 * i; index < forLimit; index++) {
+				selectMenu.addOptions(new StringSelectMenuOptionBuilder()
+					.setLabel(interaction.client.weapons[index].weaponName)
+					.setValue(interaction.client.weapons[index].weaponName)
+					.setDescription(interaction.client.weapons[index].weaponType)
+				);
+			}
+
+			actionRows.push(new ActionRowBuilder().setComponents(selectMenu));
 		}
-
-		let selectWeaponMenu2 = new StringSelectMenuBuilder()
-			.setCustomId('weaponSelect')
-			.setPlaceholder('Select a weapon you want to change camos from');
-		
-		for (let index = 25; index < interaction.client.weapons.length; index++) {
-			selectWeaponMenu2.addOptions(new StringSelectMenuOptionBuilder()
-				.setLabel(interaction.client.weapons[index].weaponName)
-				.setValue(interaction.client.weapons[index].weaponName)
-				.setDescription(interaction.client.weapons[index].weaponType)
-			);
-		}
-
-		let weaponSelectMenuRow1 = new ActionRowBuilder().setComponents(selectWeaponMenu1);
-		let weaponSelectMenuRow2 = new ActionRowBuilder().setComponents(selectWeaponMenu2);
 
 		// LOGIC
 		let index = 0;
 
-		const msg = await interaction.editReply({ components: [weaponSelectMenuRow1, buttons] });
+		const msg = await interaction.editReply({ components: [actionRows[0], buttons] });
 
 		interaction.client.stringSelectReplies[interaction.user.id] = { weapon: "", mode: "", camo: "", msg };
 
@@ -72,23 +65,19 @@ module.exports = {
 					if (index > 0) index--;
 					break;
 				case "next":
-					if (index < 1) index++;
+					if (index < actionRows.length - 1) index++;
 					break;
 			};
-
-			let weaponSelectMenu;
 
 			if (index === 0) {
 				prev.setDisabled(true);
 				next.setDisabled(false);
-				weaponSelectMenu = weaponSelectMenuRow1;
-			} else {
+			} else if (index == actionRows.length - 1) {
 				prev.setDisabled(false);
 				next.setDisabled(true);
-				weaponSelectMenu = weaponSelectMenuRow2;
 			}
 
-			await msg.edit({ components: [weaponSelectMenu, buttons] });
+			await msg.edit({ components: [actionRows[index], buttons] });
 
 			btnCollector.resetTimer();
 
