@@ -70,7 +70,7 @@ module.exports = {
 
             const camoModal = new ModalBuilder()
                 .setCustomId(isMp ? 'addMpCamosModal' : 'addZmCamosModal')
-                .setTitle(`Add the ${isMp ? 'Multiplayer' : 'Zombies'} special camos for ${weaponDetails.name}`);
+                .setTitle(`Add the ${isMp ? 'Multiplayer' : 'Zombies'} special camos`);
 
             let textFields = [];
         
